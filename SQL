@@ -1,0 +1,6 @@
+DDL (Data Definition Language), yaitu berbagai perintah yang digunakan untuk membuat, merubah, dan menghapus struktur database. Struktur database ini terdiri dari database, table, kolom dan tipe data. 
+DML (Data Manipulation Language), yaitu berbagai perintah yang digunakan untuk 
+Memasukkan data dengan perintah INSERT
+Mengambil data atau query dengan perintah SELECT
+Merubah data dengan perintah UPDATE
+Menghapus data dengan perintah DELETE
