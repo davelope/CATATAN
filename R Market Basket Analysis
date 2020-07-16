@@ -1,0 +1,46 @@
+#data yg dibutuhkan adalah : produk set yg dibeli dlm sebuah transaksi, data transaksi per record (bisa dalam transaction id)
+#dengan kata lain data transaksi dan data produk
+#arules adalah association rules
+
+#Menggunakan library arules
+library(arules)
+
+#Membaca transaksi dari file data_transaksi.txt
+transaksi <- read.transactions(file="https://academy.dqlab.id/dataset/data_transaksi.txt", format="single", sep="\t", cols=c(1,2), skip=1)
+
+#Menampilkan data transaksi dengan print dan inspect 
+inspect(transaksi)
+
+#Menghasilkan model Market Basket Analysis
+mba <- apriori(transaksi,parameter = list(supp = 0.1, confidence = 0.5))
+
+#Menampilkan paket produk
+inspect(subset(mba, lift>1))
+
+###########################
+#Menampilkan jumlah kombinasi dari produk yang terdapat pada daftar transaksi yang ada
+inspect(apriori(transaksi, parameter = list(support=.1, minlen=2, target='frequent itemsets')))
+
+############################
+#Menampilkan jumlah kombinasi dari produk yang terdapat pada daftar transaksi yang ada
+inspect(apriori(transaksi, parameter = list(support=.03, minlen=2, target='frequent itemsets')))
+
+#############################
+#sekarang kita praktek
+#Membaca file yang berlokasi di https://academy.dqlab.id/dataset/data_transaksi.txt dengan fungsi read.csv, dan kemudian disimpan pada variable transaksi_tabular
+transaksi_tabular <- read.csv("https://academy.dqlab.id/dataset/data_transaksi.txt", sep="\t")
+
+#Menampilkan variable transaksi_tabular dengan fungsi print
+print(transaksi_tabular)
+
+############################
+#single artinya ditulis per baris ke bawah, jd ada multiple same transaction id
+#basket ditulis per baris kesamping
+library(arules)
+transaksi <- read.transactions(file="https://academy.dqlab.id/dataset/data_transaksi.txt", format="single", sep="\t", cols=c(1,2), skip=1)
+transaksi@itemInfo
+transaksi@itemsetInfo
+transaksi@data #4 item dalam 10 transaksi
+itemFrequency(transaksi) #ini persentase
+itemFrequency(transaksi, type="absolute") #bukan persentase, tapi angka
+#################################
