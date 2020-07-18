@@ -1,5 +1,11 @@
 #Langkah melakukan penelitian menggunakan R
 
+TIPE DATA R
+1. Numeric
+2. Character
+3. Logical
+4. Function
+
 FRAMEWORK DATASCIENCE
 3 C
 1. CAPTURE
@@ -21,6 +27,7 @@ EXPLORATORY
 3. LEN
 4. STR
 5. CLASS
+6. MODE
 
 
 VISUALIZATION
