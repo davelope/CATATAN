@@ -33,6 +33,7 @@ EXPLORATORY
 
 
 VISUALIZATION
+1. BARPLOT
 1. GGPLOT
 gambar <- ggplot(info_mahasiswa, aes(x=fakultas, y=jumlah_mahasiswa, fill=fakultas))
 gambar <- gambar + geom_bar(width=1, stat="identity")
