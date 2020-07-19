@@ -16,6 +16,8 @@ STRUKTUR DATA
 1. VECTOR
 2. DATA.FRAME
 3. LIST
+4. FACTOR
+5. TABLE (UNTUK TAMPILAN DATA)
 
 PEMBACAAN DATA
 1. mahasiswa <- read.xlsx("https://academy.dqlab.id/dataset/mahasiswa.xlsx",sheet = "Sheet 1")
